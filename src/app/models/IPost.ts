@@ -3,10 +3,10 @@ export interface IPost {
   title: string;
   categoryId: string;
   description: string;
-  // categoryName?: string;
+  categoryName?: string;
 }
 
-// export interface CRUDAction<T> {
-//   action: 'add' | 'update' | 'delete';
-//   data: T;
-// }
+export interface CRUDAction<T> {
+  action: 'add' | 'update' | 'delete';
+  data: T;
+}

@@ -1,0 +1,14 @@
+<div class="row" *ngIf="errorMessageSubjectAction$ | async as errorMessage">
+  <!-- {{errorMsg}} -->
+  <div class="col-md-12">
+     <div class="alert alert-danger">
+       {{errorMessage}}
+      </div>
+  </div>
+</div>
+
+<div *ngIf="singlePost$ | async as post">
+   <p> Title : {{post.title}}</p>
+   <p> Description : {{post.description}}</p>
+   <p> Category : {{post?.categoryName}}</p>
+</div>

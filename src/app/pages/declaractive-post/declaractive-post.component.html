@@ -1,7 +1,17 @@
 <div class="row">
   <div class="col-md-12">
     <h3>Post Data</h3>
-    <table class="table" *ngIf="posts.length > 0">
+    <div class="row">
+      <div class="col-md-4">
+         <select class="form-select" (change)="oncategoryChange($event)">
+           <option value="">select Category</option>
+           <option [value]="category.id" *ngFor="let category of categories$ | async">
+             {{category.title}}
+           </option>
+         </select>
+      </div>
+    </div>
+    <table class="table" *ngIf="(filteredPost$ | async) as posts">
       <thead>
         <tr>
           <td>Id</td>
